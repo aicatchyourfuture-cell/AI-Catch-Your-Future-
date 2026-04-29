@@ -8,3 +8,40 @@
 export interface HealthStatus {
   status: string;
 }
+
+export type InquiryType = (typeof InquiryType)[keyof typeof InquiryType];
+
+export const InquiryType = {
+  lookbook: "lookbook",
+  trade: "trade",
+  general: "general",
+} as const;
+
+export interface CreateInquiryBody {
+  /**
+   * @minLength 1
+   * @maxLength 200
+   */
+  name: string;
+  /** @maxLength 320 */
+  email: string;
+  inquiryType: InquiryType;
+  /**
+   * @minLength 1
+   * @maxLength 4000
+   */
+  message: string;
+}
+
+export interface Inquiry {
+  id: number;
+  name: string;
+  email: string;
+  inquiryType: InquiryType;
+  message: string;
+  createdAt: string;
+}
+
+export interface ErrorResponse {
+  error: string;
+}

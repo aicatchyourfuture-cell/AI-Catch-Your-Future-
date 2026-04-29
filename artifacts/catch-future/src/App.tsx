@@ -11,6 +11,7 @@ import { Puresar } from "@/components/sections/Puresar";
 import { Process } from "@/components/sections/Process";
 import { Collections } from "@/components/sections/Collections";
 import { Impact } from "@/components/sections/Impact";
+import { Inquiry } from "@/components/sections/Inquiry";
 import { Footer } from "@/components/sections/Footer";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ function Home() {
       <Process />
       <Collections />
       <Impact />
+      <Inquiry />
       <Footer />
     </main>
   );

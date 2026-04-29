@@ -14,3 +14,20 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * Records a contact / lookbook / trade inquiry from the landing page.
+ * @summary Submit a Puresar inquiry
+ */
+export const createInquiryBodyNameMax = 200;
+
+export const createInquiryBodyEmailMax = 320;
+
+export const createInquiryBodyMessageMax = 4000;
+
+export const CreateInquiryBody = zod.object({
+  name: zod.string().min(1).max(createInquiryBodyNameMax),
+  email: zod.string().email().max(createInquiryBodyEmailMax),
+  inquiryType: zod.enum(["lookbook", "trade", "general"]),
+  message: zod.string().min(1).max(createInquiryBodyMessageMax),
+});
