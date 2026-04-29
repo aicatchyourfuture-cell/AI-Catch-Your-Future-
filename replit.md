@@ -34,3 +34,5 @@ Luxury landing page for Catch Future and its sub-brand Puresar (banana-fiber sus
 - Hero "Reserve Now" CTA jumps to `#inquiry` (the public form section).
 - Inquiry form (`/`) → `POST /api/inquiries` → Postgres `inquiries` table.
 - Private admin "Lookbook Ledger" at `/admin/login` and `/admin`. Cookie session signed with `SESSION_SECRET`; gated by `ADMIN_PASSWORD` secret. Endpoints: `POST /api/admin/login`, `POST /api/admin/logout`, `GET /api/admin/me`, `GET /api/admin/inquiries`. Dashboard supports filtering by inquiry type and CSV export.
+- Email notifications on new inquiries via nodemailer in `artifacts/api-server/src/lib/mailer.ts`. Sends to `MAIL_TO` (default `atelier@catchfuture.com`) using SMTP env vars: `SMTP_HOST`, `SMTP_PORT` (default `587`, use `465` for TLS), `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`. If any of those are missing, the inquiry is still recorded and a warning is logged — the public form never fails because of mail.
+- Footer includes a discreet "Under the patronage of" row with text-style emblems for AHK and GIZ. These are typographic placeholders ready to be swapped for official logo SVGs when assets are provided.
