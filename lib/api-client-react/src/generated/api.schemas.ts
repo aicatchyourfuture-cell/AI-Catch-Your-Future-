@@ -42,6 +42,19 @@ export interface Inquiry {
   createdAt: string;
 }
 
+export interface InquiryList {
+  items: Inquiry[];
+}
+
+export interface AdminLoginBody {
+  /** @minLength 1 */
+  password: string;
+}
+
+export interface AdminSession {
+  authenticated: boolean;
+}
+
 export interface ErrorResponse {
   error: string;
 }

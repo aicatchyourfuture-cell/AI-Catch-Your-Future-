@@ -31,3 +31,40 @@ export const CreateInquiryBody = zod.object({
   inquiryType: zod.enum(["lookbook", "trade", "general"]),
   message: zod.string().min(1).max(createInquiryBodyMessageMax),
 });
+
+/**
+ * Verifies the admin password and sets a signed session cookie.
+ * @summary Authenticate admin session
+ */
+
+export const AdminLoginBody = zod.object({
+  password: zod.string().min(1),
+});
+
+export const AdminLoginResponse = zod.object({
+  authenticated: zod.boolean(),
+});
+
+/**
+ * @summary Current admin session status
+ */
+export const AdminMeResponse = zod.object({
+  authenticated: zod.boolean(),
+});
+
+/**
+ * Returns every inquiry, newest first. Requires an admin session.
+ * @summary List all inquiries
+ */
+export const ListInquiriesResponse = zod.object({
+  items: zod.array(
+    zod.object({
+      id: zod.number(),
+      name: zod.string(),
+      email: zod.string(),
+      inquiryType: zod.enum(["lookbook", "trade", "general"]),
+      message: zod.string(),
+      createdAt: zod.coerce.date(),
+    }),
+  ),
+});

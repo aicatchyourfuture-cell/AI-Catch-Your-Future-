@@ -146,19 +146,23 @@
   position: relative;
 }
 
+/* Braided / woven banana-fiber texture: interlaced diagonal warp + weft */
 .weave-texture::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.07;
   z-index: 10;
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23000' stroke-width='1' stroke-linecap='round' opacity='0.85'%3E%3Cpath d='M0 8 Q4 4 8 8 T16 8 T24 8 T32 8'/%3E%3Cpath d='M0 24 Q4 20 8 24 T16 24 T24 24 T32 24'/%3E%3Cpath d='M8 0 Q4 4 8 8 T8 16 T8 24 T8 32'/%3E%3Cpath d='M24 0 Q20 4 24 8 T24 16 T24 24 T24 32'/%3E%3C/g%3E%3Cg fill='%23000' opacity='0.5'%3E%3Ccircle cx='8' cy='8' r='0.6'/%3E%3Ccircle cx='24' cy='8' r='0.6'/%3E%3Ccircle cx='8' cy='24' r='0.6'/%3E%3Ccircle cx='24' cy='24' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 32px 32px;
 }
 
-.dark .weave-texture::after {
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.04;
+.dark .weave-texture::after,
+.bg-forest .weave-texture::after,
+.weave-texture.on-forest::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23f4f1eb' stroke-width='1' stroke-linecap='round' opacity='0.85'%3E%3Cpath d='M0 8 Q4 4 8 8 T16 8 T24 8 T32 8'/%3E%3Cpath d='M0 24 Q4 20 8 24 T16 24 T24 24 T32 24'/%3E%3Cpath d='M8 0 Q4 4 8 8 T8 16 T8 24 T8 32'/%3E%3Cpath d='M24 0 Q20 4 24 8 T24 16 T24 24 T24 32'/%3E%3C/g%3E%3Cg fill='%23f4f1eb' opacity='0.6'%3E%3Ccircle cx='8' cy='8' r='0.6'/%3E%3Ccircle cx='24' cy='8' r='0.6'/%3E%3Ccircle cx='8' cy='24' r='0.6'/%3E%3Ccircle cx='24' cy='24' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.09;
 }
 
 .split-bg {

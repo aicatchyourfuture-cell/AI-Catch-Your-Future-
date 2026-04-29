@@ -25,3 +25,12 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+
+## Catch Future / Puresar app (`artifacts/catch-future`)
+
+Luxury landing page for Catch Future and its sub-brand Puresar (banana-fiber sustainable luxury textiles).
+
+- Sovereign Aesthetic palette: Forest `hsl(150 32% 14%)`, Beige `hsl(41 46% 81%)`, Gold `hsl(43 45% 45%)`, Cream `hsl(45 30% 94%)`. Vertical/diagonal split backdrops via `.split-bg` and braided weave overlay via `.weave-texture` (auto-inverts on dark / `.bg-forest` containers).
+- Hero "Reserve Now" CTA jumps to `#inquiry` (the public form section).
+- Inquiry form (`/`) → `POST /api/inquiries` → Postgres `inquiries` table.
+- Private admin "Lookbook Ledger" at `/admin/login` and `/admin`. Cookie session signed with `SESSION_SECRET`; gated by `ADMIN_PASSWORD` secret. Endpoints: `POST /api/admin/login`, `POST /api/admin/logout`, `GET /api/admin/me`, `GET /api/admin/inquiries`. Dashboard supports filtering by inquiry type and CSV export.

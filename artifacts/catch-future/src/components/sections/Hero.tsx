@@ -32,7 +32,14 @@ export function Hero() {
             <motion.p variants={fadeInUp} className="text-lg font-sans leading-relaxed max-w-md text-forest/80 mb-10">
               A quietly confident heritage house from India. Rooted in regenerative agriculture, realized through uncompromised luxury.
             </motion.p>
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-6">
+              <a
+                href="#inquiry"
+                className="group inline-flex items-center gap-4 bg-forest text-cream px-10 py-4 hover:bg-gold hover:text-forest transition-colors duration-500"
+              >
+                <span className="font-sans text-xs uppercase tracking-[0.25em] font-medium">Reserve Now</span>
+                <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+              </a>
               <a href="#collections" className="inline-flex items-center gap-4 group">
                 <span className="font-sans text-sm uppercase tracking-widest font-medium border-b border-forest pb-1 group-hover:border-gold transition-colors duration-300">Discover Puresar</span>
               </a>

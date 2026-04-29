@@ -12,6 +12,8 @@ tags:
     description: Health operations
   - name: inquiries
     description: Customer inquiries and lookbook requests
+  - name: admin
+    description: Private admin / atelier endpoints
 paths:
   /healthz:
     get:
@@ -47,6 +49,76 @@ paths:
                 $ref: "#/components/schemas/Inquiry"
         "400":
           description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /admin/login:
+    post:
+      operationId: adminLogin
+      tags: [admin]
+      summary: Authenticate admin session
+      description: Verifies the admin password and sets a signed session cookie.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AdminLoginBody"
+      responses:
+        "200":
+          description: Authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AdminSession"
+        "401":
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /admin/logout:
+    post:
+      operationId: adminLogout
+      tags: [admin]
+      summary: End admin session
+      responses:
+        "204":
+          description: Logged out
+  /admin/me:
+    get:
+      operationId: adminMe
+      tags: [admin]
+      summary: Current admin session status
+      responses:
+        "200":
+          description: Authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AdminSession"
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /admin/inquiries:
+    get:
+      operationId: listInquiries
+      tags: [admin]
+      summary: List all inquiries
+      description: Returns every inquiry, newest first. Requires an admin session.
+      responses:
+        "200":
+          description: Inquiry list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InquiryList"
+        "401":
+          description: Not authenticated
           content:
             application/json:
               schema:
@@ -111,6 +183,30 @@ components:
         - inquiryType
         - message
         - createdAt
+    InquiryList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Inquiry"
+      required:
+        - items
+    AdminLoginBody:
+      type: object
+      properties:
+        password:
+          type: string
+          minLength: 1
+      required:
+        - password
+    AdminSession:
+      type: object
+      properties:
+        authenticated:
+          type: boolean
+      required:
+        - authenticated
     ErrorResponse:
       type: object
       properties:
