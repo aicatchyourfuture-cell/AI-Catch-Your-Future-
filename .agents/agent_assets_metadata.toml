@@ -1,0 +1,44 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "TXp8ElzuTLzd4KjQ2lWwH"
+uri = "file://artifacts/catch-future/public/images/hero.png"
+type = "image"
+title = "hero saree natural light"
+
+[[generated]]
+id = "xiB3m15640XBOLijbVem_"
+uri = "file://artifacts/catch-future/public/images/yarn.png"
+type = "image"
+title = "banana fiber handloom yarn"
+
+[[generated]]
+id = "VNVGQThoQuDi4v_TAz2nW"
+uri = "file://artifacts/catch-future/public/images/texture.png"
+type = "image"
+title = "woven textile detail"
+
+[[generated]]
+id = "QcjVaYhHoO56RrXXdcsLh"
+uri = "file://artifacts/catch-future/public/images/farm.png"
+type = "image"
+title = "regenerative banana farm"
+
+[[generated]]
+id = "neqGlmy0uJJOhlUgmZufV"
+uri = "file://artifacts/catch-future/public/images/artisan.png"
+type = "image"
+title = "artisan hands at loom"
+
+[[generated]]
+id = "5rGM8CWW37v7htJjj6x1T"
+uri = "file://artifacts/catch-future/public/images/product-flatlay.png"
+type = "image"
+title = "luxury flatlay textile"
+
+[[generated]]
+id = "8aYVaYEXaRT4sgaLoPiZI"
+uri = "file://artifacts/catch-future/public/images/fabric-drape.png"
+type = "image"
+title = "draped fabric detail"
