@@ -1,6 +1,28 @@
 # Catch Future — Puresar
 
-A luxury digital presence for **Catch Future** and its flagship sub-brand **Puresar** — handcrafted textiles made from banana fibre, rooted in regenerative agriculture and uncompromised Indian craft heritage.
+<p align="center">
+  <img src="assets/logo.svg" alt="Catch Future · Puresar" width="400"/>
+</p>
+
+<p align="center">
+  A luxury digital presence for <strong>Catch Future</strong> and its flagship sub-brand <strong>Puresar</strong> —<br/>
+  handcrafted textiles made from banana fibre, rooted in regenerative agriculture and uncompromised Indian craft heritage.
+</p>
+
+---
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><strong>Hero — Landing Page</strong></td>
+    <td align="center"><strong>Atelier Login — Admin Dashboard</strong></td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshot-hero.jpg" alt="Hero section" width="480"/></td>
+    <td><img src="assets/screenshot-form.jpg" alt="Atelier login form" width="480"/></td>
+  </tr>
+</table>
 
 ---
 
