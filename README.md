@@ -11,6 +11,16 @@
 
 ---
 
+## Demo
+
+<p align="center">
+  <img src="assets/demo-preview.gif" alt="Catch Future · Puresar — site walkthrough: hero, inquiry form, and Lookbook Ledger admin" width="960"/>
+</p>
+
+*Hero entrance → Reservation inquiry form → Private Lookbook Ledger admin login*
+
+---
+
 ## Screenshots
 
 <table>
