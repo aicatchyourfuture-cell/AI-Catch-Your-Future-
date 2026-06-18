@@ -58,3 +58,4 @@ function App() {
 }
 
 export default App;
+import FutureScanner from "@/pages/FutureScanner";
