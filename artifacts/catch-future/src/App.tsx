@@ -28,7 +28,11 @@ function Home() {
       <Collections />
       <Impact />
       <Inquiry />
-      <Footer />
+      <Footer /><Route path="/" component={Home} />
+<Route path="/future-scanner" component={FutureScanner} />
+<Route path="/admin/login" component={AdminLogin} />
+<Route path="/admin" component={AdminDashboard} />
+<Route component={NotFound} />
     </main>
   );
 }
