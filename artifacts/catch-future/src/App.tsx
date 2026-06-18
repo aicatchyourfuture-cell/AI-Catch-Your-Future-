@@ -1,13 +1,13 @@
-import NotFound from "@/pages/not-found";
-import AdminLogin from "@/pages/AdminLogin";
-import AdminDashboard from "@/pages/AdminDashboard";
-import FutureScanner from "@/pages/FutureScanner";import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+
 import NotFound from "@/pages/not-found";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
+import FutureScanner from "@/pages/FutureScanner";
 
 // Sections
 import { Hero } from "@/components/sections/Hero";
@@ -31,11 +31,7 @@ function Home() {
       <Collections />
       <Impact />
       <Inquiry />
-      <Footer /><Route path="/" component={Home} />
-<Route path="/future-scanner" component={FutureScanner} />
-<Route path="/admin/login" component={AdminLogin} />
-<Route path="/admin" component={AdminDashboard} />
-<Route component={NotFound} />
+      <Footer />
     </main>
   );
 }
@@ -44,8 +40,22 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/admin/login" component={AdminLogin} />
-      <Route path="/admin" component={AdminDashboard} />
+
+      <Route
+        path="/future-scanner"
+        component={FutureScanner}
+      />
+
+      <Route
+        path="/admin/login"
+        component={AdminLogin}
+      />
+
+      <Route
+        path="/admin"
+        component={AdminDashboard}
+      />
+
       <Route component={NotFound} />
     </Switch>
   );
@@ -58,6 +68,7 @@ function App() {
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <Router />
         </WouterRouter>
+
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
@@ -65,4 +76,3 @@ function App() {
 }
 
 export default App;
-import FutureScanner from "@/pages/FutureScanner";
